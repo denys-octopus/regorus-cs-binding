@@ -20,15 +20,17 @@ jobs:
             libpath: |
               **/release/regorus_ffi.dll
               **/release/regorus_ffi.pdb
+              RegorusFFI.g.cs
           - os: ubuntu-latest
             target: x86_64-unknown-linux-gnu
             libpath: |
               **/release/libregorus_ffi.so
-          # Disabled for now
-          #- os: macos-latest
-          #  target: aarch64-apple-darwin
-          #  libpath: |
-          #    **/release/libregorus_ffi.dylib
+              RegorusFFI.g.cs
+          - os: macos-latest
+            target: aarch64-apple-darwin
+            libpath: |
+              **/release/libregorus_ffi.dylib
+              RegorusFFI.g.cs
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
